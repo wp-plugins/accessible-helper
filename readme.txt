@@ -22,7 +22,7 @@ The plugin requires the open-source QUAIL (QUAIL Accessibility Information Libra
 
 == Frequently Asked Questions ==
 
-= How are the guidelines created? ==
+= How are the guidelines created? =
 
 The guidelines are inherited from the QUAIL library. You can view all the tests that QUAIL provides, along with their alignment to each guideline at http://quail-lib.org/tests. 
 
@@ -30,6 +30,6 @@ The guidelines are inherited from the QUAIL library. You can view all the tests 
 
 Tests are broken into three levels -- called severity levels -- that define how accurate a test is, and therefore, how severe errors the test finds are. They are really a level of how sure we are that there is a problem on a page. All accessibility errors should be fixed, but some things are not possible to test through automated processes alone (like if an "alt" text of an image is correct.)
 
-1. Severe errors - Errors where there is a 100% certainty that the problem exists.
-2. Moderate errors - There is probably an issue here, but someone should take a look first.
-3. Suggestions - This area of the document has a likelihood that there could be an error, but only a human can review this.
+1. **Severe errors** - Errors where there is a 100% certainty that the problem exists.
+2. **Moderate errors** - There is probably an issue here, but someone should take a look first.
+3. **Suggestions** - This area of the document has a likelihood that there could be an error, but only a human can review this.
