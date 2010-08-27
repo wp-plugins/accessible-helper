@@ -3,7 +3,7 @@
 Plugin Name: Accessibility Helper
 Plugin URI: http://quail-lib.org/wp
 Description: Gives an overview of accessibility problems on a page
-Version: alpha1
+Version: 0.2
 Author: Kevin Miller
 Author URI: http://twitter.com/kevinmiyar
 License: GPL3
