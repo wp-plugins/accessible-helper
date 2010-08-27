@@ -116,7 +116,7 @@ function accessible_helper_options() {
 *	to the post.
 */
 function accessible_helper_filter($data, $postarr = array()) {
-	if ( !$data['post_content'] ) {
+	if ( !$data['post_content'] || !$data['guid']) {
 		return $data;
 	}
 	global $post;
@@ -142,10 +142,13 @@ function accessible_helper_cleanup_results($results) {
 	$errors = array();
 	foreach($results as $testname => $result) {
 		if ( $severity[$result['severity']] 
-		     && ($result['pass'] === false || count( $result['problems'] ) > 0) ) {
-			$errors[$result['severity']]['total'] += (count( $result['problems'] ) > 0)
-													 ? count( $result['problems'] )
-													 : 1;
+		     && ($result['problems']['pass'] === false || count( $result['problems'] ) > 0) ) {
+			if ( $result['problems']['pass'] === false ) {
+				$errors[$result['severity']]['total']++;
+			}
+			else {
+				$errors[$result['severity']]['total'] += count( $result['problems'] ) - 1;
+			}
 			$errors[$result['severity']][$testname] = $result;
 		}
 	}
@@ -174,10 +177,11 @@ function accessible_helper_overview( $post ) {
 		return null;
 	}
 	foreach( accessible_helper_get_severity() as $severity => $label ) {
-		$total = get_post_meta( $post->ID, '_accessibility_'. $severity );
-		if ( $total[0] ) {
+		$total = get_post_meta( $post->ID, '_accessibility_'. $severity, true );
+		
+		if ( $total ) {
 			echo '<p class="accessibility-level-'. $severity .'"><span class="label">'. 
-			  $label .':</span> '. $total[0] .'</p>';
+			  $label .':</span> '. $total .'</p>';
 		}
 	}
 	echo '<p><a href="edit.php?page=accessibility&post='. $post->ID .'">View More Information</a> | ';

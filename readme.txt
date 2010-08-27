@@ -20,6 +20,10 @@ The plugin requires the open-source QUAIL (QUAIL Accessibility Information Libra
 3. Upload the `quail` directory to `/wp-content/plugins/accessible_helper/`
 3. Go to the Plugins page and enable the plugin
 
+== Screenshots ==
+1. The accessibility overview widget while editing a post or page
+2. When the user hovers over an image before errors, they see a popup of what the problem is. This also links to a page with the same information.
+
 == Frequently Asked Questions ==
 
 = How are the guidelines created? =
