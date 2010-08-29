@@ -13,7 +13,6 @@ add_action( 'admin_menu', 'accessible_helper_menu' );
 add_action( 'admin_init', 'accessible_helper_admin_init' );
 add_filter( 'wp_insert_post_data', 'accessible_helper_filter' );
 add_filter( 'wp_insert_page_data', 'accessible_helper_filter' );
-add_action( 'wp_dashboard_setup', 'accessible_helper_add_dashboard_widgets' );
 wp_register_script('beautytips_handle', WP_PLUGIN_URL. '/accessible_helper/js/jquery.bt.min.js', array('jquery') );
 wp_register_script('accessibility_handle', WP_PLUGIN_URL. '/accessible_helper/js/accessibility.js' );
 
@@ -116,7 +115,7 @@ function accessible_helper_options() {
 *	to the post.
 */
 function accessible_helper_filter($data, $postarr = array()) {
-	if ( !$data['post_content'] || !$data['guid']) {
+	if ( !$data['post_content'] || !$data['guid'] ) {
 		return $data;
 	}
 	global $post;
