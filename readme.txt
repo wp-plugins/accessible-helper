@@ -3,7 +3,7 @@ Contributors: kevee
 Tags: accessibility
 Requires at least: 3.0.0
 Tested up to: 3.0.0
-Stable tag: 0.2
+Stable tag: 0.2.1
 
 Gives feedback to authors about the accessibility problems of their posts and pages.
 
