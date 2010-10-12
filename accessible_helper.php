@@ -13,8 +13,8 @@ add_action( 'admin_menu', 'accessible_helper_menu' );
 add_action( 'admin_init', 'accessible_helper_admin_init' );
 add_filter( 'wp_insert_post_data', 'accessible_helper_filter' );
 add_filter( 'wp_insert_page_data', 'accessible_helper_filter' );
-wp_register_script('beautytips_handle', WP_PLUGIN_URL. '/accessible_helper/js/jquery.bt.min.js', array('jquery') );
-wp_register_script('accessibility_handle', WP_PLUGIN_URL. '/accessible_helper/js/accessibility.js' );
+wp_register_script('beautytips_handle', WP_PLUGIN_URL. '/accessible-helper/js/jquery.bt.min.js', array('jquery') );
+wp_register_script('accessibility_handle', WP_PLUGIN_URL. '/accessible-helper/js/accessibility.js' );
 
 /**
 *	Implementation of hook_admin_init()
@@ -192,10 +192,7 @@ function accessible_helper_overview( $post ) {
 *	Includes the QUAIL library
 */
 function accessible_helper_include_library() {
-	if ( !file_exists(ABSPATH .'wp-content/plugins/accessible_helper/quail/quail/quail.php') ) {
-		return $data;
-	}
-	return include_once(ABSPATH .'wp-content/plugins/accessible_helper/quail/quail/quail.php');
+	return include_once(ABSPATH .'wp-content/plugins/accessible-helper/quail/quail/quail.php');
 }
 
 /**
@@ -225,7 +222,7 @@ function accessible_helper_overview_page() {
 */
 function accessible_helper_get_test( $test ) {
 	if ( !$test_info = get_option('accessibility_test_'. $test) ) {
-		$translations = fopen(ABSPATH .'wp-content/plugins/accessible_helper/quail/quail/guidelines/translations/en.txt', 'r');
+		$translations = fopen(ABSPATH .'wp-content/plugins/accessible-helper/quail/quail/guidelines/translations/en.txt', 'r');
 		if ($translations ) {
 		    while ( $translation = fgetcsv($translations) ) {
 				if ( count($translation) == 4 && $translation[0] == $test ) {

@@ -3,7 +3,7 @@ if( $_GET['test'] == 'list' ) {
 	echo '<h2>'. __( 'Manage Error Messages', 'accessible_helper' ) .'</h2>';
 	echo '<ul>';
 	$translations = fopen( ABSPATH .
-		'wp-content/plugins/accessible_helper/quail/quail/guidelines/translations/en.txt', 'r' );
+		'wp-content/plugins/accessible-helper/quail/quail/guidelines/translations/en.txt', 'r' );
 	if ( $translations ) {
 	  while ( $translation = fgetcsv( $translations ) ) {
 			i f( count( $translation ) == 4 ) {

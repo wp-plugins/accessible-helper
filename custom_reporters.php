@@ -1,6 +1,6 @@
 <?php
 
-include_once(ABSPATH .'wp-content/plugins/accessible_helper/quail/quail/reporters/reporter.demo.php');
+include_once(ABSPATH .'wp-content/plugins/accessible-helper/quail/quail/reporters/reporter.demo.php');
 
 
 /**
@@ -44,7 +44,7 @@ class reportWpReportDemo extends reportDemo {
 							$image = $this->dom->createElement('img');
 							$image = $link->appendChild($image);
 							$image->setAttribute('alt', $test['title']);
-							$image->setAttribute('src', '../wp-content/plugins/accessible_helper/images/'. 
+							$image->setAttribute('src', '../wp-content/plugins/accessible-helper/images/'. 
 														$this->images[$test['severity']]);
 						}
 					}
